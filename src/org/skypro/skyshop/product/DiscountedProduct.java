@@ -1,6 +1,8 @@
 package org.skypro.skyshop.product;
 
-public class DiscountedProduct extends Product {
+import org.skypro.skyshop.search.Searchable;
+
+public class DiscountedProduct extends Product implements Searchable {
     private int basePrice;
     private byte discountPercent;
 

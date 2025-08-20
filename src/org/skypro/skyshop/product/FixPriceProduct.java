@@ -1,6 +1,8 @@
 package org.skypro.skyshop.product;
 
-public class FixPriceProduct extends Product {
+import org.skypro.skyshop.search.Searchable;
+
+public class FixPriceProduct extends Product implements Searchable {
     private String name;
     private static final int FIXED_PRICE = 100;
 
