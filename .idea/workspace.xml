@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cf782d4-89d1-4e38-a308-a4ffd72c2ec5" name="Changes" comment="Домашнее задание по уроку «ООП. Наследование. Абстрактные классы»">
-      <change afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/article/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/search/Searchable.java" afterDir="false" />
+    <list default="true" id="5cf782d4-89d1-4e38-a308-a4ffd72c2ec5" name="Changes" comment="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/DiscountedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/DiscountedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/FixPriceProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/FixPriceProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/SimpleProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/SimpleProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +85,11 @@
       <workItem from="1753386215011" duration="1816000" />
       <workItem from="1755588242593" duration="4916000" />
       <workItem from="1755676831181" duration="1047000" />
-      <workItem from="1755692383305" duration="1230000" />
+      <workItem from="1755692383305" duration="3107000" />
+      <workItem from="1755725936414" duration="540000" />
+      <workItem from="1755793573910" duration="1122000" />
+      <workItem from="1755974183384" duration="596000" />
+      <workItem from="1756125843661" duration="1537000" />
     </task>
     <task id="LOCAL-00001" summary="Начальный коммит">
       <created>1752609014994</created>
@@ -121,7 +119,21 @@
       <option name="project" value="LOCAL" />
       <updated>1753092581473</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»">
+      <created>1755716364390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755716364390</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»">
+      <created>1755716469284</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1755716469284</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,25 +166,16 @@
     <MESSAGE value="Начальный коммит" />
     <MESSAGE value="Домашнее задание по уроку «Введение в ООП. Инкапсуляция»" />
     <MESSAGE value="Домашнее задание по уроку «ООП. Наследование. Абстрактные классы»" />
-    <option name="LAST_COMMIT_MESSAGE" value="Домашнее задание по уроку «ООП. Наследование. Абстрактные классы»" />
+    <MESSAGE value="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»" />
+    <option name="LAST_COMMIT_MESSAGE" value="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/App.java</url>
-          <line>31</line>
+          <line>21</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

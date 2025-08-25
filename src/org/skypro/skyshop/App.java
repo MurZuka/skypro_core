@@ -23,7 +23,7 @@ public class App {
         Article a2 = new Article("Описание 2", "Текст описания два");
 
         Searchable[] toEngine = new Searchable[]{p1, p2, p3, p4, p5, a1, a2};
-        SearchEngine searchEngine = new SearchEngine(toEngine, toEngine.length);
+        SearchEngine searchEngine = new SearchEngine(toEngine, 1);
 
         System.out.println(Arrays.toString(searchEngine.search("два")));
         System.out.println(Arrays.toString(searchEngine.search("микров")));
