@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cf782d4-89d1-4e38-a308-a4ffd72c2ec5" name="Changes" comment="Начальный коммит">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/basket/ProductBasket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5cf782d4-89d1-4e38-a308-a4ffd72c2ec5" name="Changes" comment="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +14,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -24,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="homework3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,12 +51,12 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="org.skypro.skyshop.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.skypro.skyshop.App" />
       <module name="skypro_core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.skypro.skyshop.*" />
+          <option name="PATTERN" value="org.skypro.skyshop.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -68,7 +66,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
+        <item itemvalue="Application.org.skypro.skyshop.App" />
       </list>
     </recent_temporary>
   </component>
@@ -81,7 +79,17 @@
       <option name="presentableId" value="Default" />
       <updated>1752608886329</updated>
       <workItem from="1752608887543" duration="4445000" />
-      <workItem from="1752615445448" duration="1587000" />
+      <workItem from="1752615445448" duration="2061000" />
+      <workItem from="1752871581184" duration="2979000" />
+      <workItem from="1753090054039" duration="6403000" />
+      <workItem from="1753386215011" duration="1816000" />
+      <workItem from="1755588242593" duration="4916000" />
+      <workItem from="1755676831181" duration="1047000" />
+      <workItem from="1755692383305" duration="3107000" />
+      <workItem from="1755725936414" duration="540000" />
+      <workItem from="1755793573910" duration="1122000" />
+      <workItem from="1755974183384" duration="596000" />
+      <workItem from="1756125843661" duration="1537000" />
     </task>
     <task id="LOCAL-00001" summary="Начальный коммит">
       <created>1752609014994</created>
@@ -97,7 +105,35 @@
       <option name="project" value="LOCAL" />
       <updated>1752610096097</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Домашнее задание по уроку «Введение в ООП. Инкапсуляция»">
+      <created>1752617899514</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752617899514</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Домашнее задание по уроку «ООП. Наследование. Абстрактные классы»">
+      <created>1753092581473</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753092581473</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»">
+      <created>1755716364390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755716364390</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»">
+      <created>1755716469284</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1755716469284</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,7 +144,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="homework2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -116,14 +164,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Начальный коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="Начальный коммит" />
+    <MESSAGE value="Домашнее задание по уроку «Введение в ООП. Инкапсуляция»" />
+    <MESSAGE value="Домашнее задание по уроку «ООП. Наследование. Абстрактные классы»" />
+    <MESSAGE value="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»" />
+    <option name="LAST_COMMIT_MESSAGE" value="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/App.java</url>
-          <line>17</line>
+          <line>21</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
