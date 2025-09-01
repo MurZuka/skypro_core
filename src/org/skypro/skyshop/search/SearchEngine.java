@@ -37,6 +37,37 @@ public class SearchEngine {
         return result;
     }
 
+    public Searchable getBestResult(String search) throws BestResultNotFound {
+        Searchable result = null;
+        int currentMaxCount = 0;
+        String toSearch = search.toUpperCase();
+        
+        for (int i = 0; i < elements.length; i++) {
+            String str = elements[i].getStringRepresentation().toUpperCase();
+
+            int matchCount = 0;
+            int index = 0;
+            int substrIndex = str.indexOf(toSearch, index);
+
+            while (substrIndex != -1) {
+                matchCount++;
+                index = substrIndex + toSearch.length();
+                substrIndex = str.indexOf(toSearch, index);
+            }
+
+            if (matchCount > currentMaxCount) {
+                currentMaxCount = matchCount;
+                result = elements[i];
+            }
+        }
+
+        if (result == null) {
+            throw new BestResultNotFound(search);
+        } else {
+            return result;
+        }
+    }
+
     public void add(Searchable newElement) {
         for (int i = 0; i < elements.length; i++) {
             if (elements[i] == null) {
