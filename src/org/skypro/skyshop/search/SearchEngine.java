@@ -41,19 +41,11 @@ public class SearchEngine {
         Searchable result = null;
         int currentMaxCount = 0;
         String toSearch = search.toUpperCase();
-        
+
         for (int i = 0; i < elements.length; i++) {
             String str = elements[i].getStringRepresentation().toUpperCase();
 
-            int matchCount = 0;
-            int index = 0;
-            int substrIndex = str.indexOf(toSearch, index);
-
-            while (substrIndex != -1) {
-                matchCount++;
-                index = substrIndex + toSearch.length();
-                substrIndex = str.indexOf(toSearch, index);
-            }
+            int matchCount = getMatchCount(toSearch, str);
 
             if (matchCount > currentMaxCount) {
                 currentMaxCount = matchCount;
@@ -66,6 +58,19 @@ public class SearchEngine {
         } else {
             return result;
         }
+    }
+
+    private int getMatchCount(String toSearch, String str) {
+        int matchCount = 0;
+        int index = 0;
+        int substrIndex = str.indexOf(toSearch, index);
+
+        while (substrIndex != -1) {
+            matchCount++;
+            index = substrIndex + toSearch.length();
+            substrIndex = str.indexOf(toSearch, index);
+        }
+        return matchCount;
     }
 
     public void add(Searchable newElement) {
