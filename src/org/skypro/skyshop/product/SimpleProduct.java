@@ -8,6 +8,7 @@ public class SimpleProduct extends Product implements Searchable {
 
     public SimpleProduct(String name, int cost) {
         super(name);
+        this.name = name;
 
         if (cost > 0) {
             this.cost = cost;
