@@ -8,6 +8,7 @@ public class FixPriceProduct extends Product implements Searchable {
 
     public FixPriceProduct(String name) {
         super(name);
+        this.name = name;
     }
 
     @Override

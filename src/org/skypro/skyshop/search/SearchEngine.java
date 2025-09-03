@@ -1,36 +1,35 @@
 package org.skypro.skyshop.search;
 
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchEngine {
-    private Searchable[] elements;
+    private ArrayList<Searchable> elements;
 
-    public SearchEngine(Searchable[] elements, int arrSize) {
-        if (elements.length == arrSize) {
-            this.elements = elements;
+    public SearchEngine(List<Searchable> elements, int listSize) {
+        this.elements = new ArrayList<>();
+
+        if (elements.size() == listSize) {
+            this.elements.addAll(elements);
         } else {
-            Searchable[] targetElements = new Searchable[arrSize];
+            List<Searchable> targetElements = new ArrayList<>(listSize);
 
-            for (int i = 0; i < elements.length; i++) {
-                if (i == arrSize) break;
+            for (int i = 0; i < elements.size(); i++) {
+                if (i == listSize) break;
 
-                targetElements[i] = elements[i];
+                targetElements.add(elements.get(i));
             }
 
-            this.elements = targetElements;
+            this.elements.addAll(targetElements);
         }
     }
 
-    public String[] search(String toSearch) {
-        int filledCount = 0;
-        String[] result = new String[5];
+    public List<String> search(String toSearch) {
+        List<String> result = new ArrayList<>();
 
-        for (int i = 0; i < elements.length; i++) {
-            if (elements[i].getSearchTerm().toUpperCase().contains(toSearch.toUpperCase())) {
-                result[filledCount] = elements[i].getStringRepresentation();
-
-                filledCount++;
-                if (filledCount > result.length) break;
+        for (Searchable s : elements) {
+            if (s.getSearchTerm().toUpperCase().contains(toSearch.toUpperCase())) {
+                result.add(s.getStringRepresentation());
             }
         }
 
@@ -42,14 +41,14 @@ public class SearchEngine {
         int currentMaxCount = 0;
         String toSearch = search.toUpperCase();
 
-        for (int i = 0; i < elements.length; i++) {
-            String str = elements[i].getStringRepresentation().toUpperCase();
+        for (Searchable s : elements) {
+            String str = s.getStringRepresentation().toUpperCase();
 
             int matchCount = getMatchCount(toSearch, str);
 
             if (matchCount > currentMaxCount) {
                 currentMaxCount = matchCount;
-                result = elements[i];
+                result = s;
             }
         }
 
@@ -74,11 +73,6 @@ public class SearchEngine {
     }
 
     public void add(Searchable newElement) {
-        for (int i = 0; i < elements.length; i++) {
-            if (elements[i] == null) {
-                elements[i] = newElement;
-                break;
-            }
-        }
+        elements.add(newElement);
     }
 }
