@@ -2,29 +2,40 @@ package org.skypro.skyshop.basket;
 
 import org.skypro.skyshop.product.Product;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ProductBasket {
-    private ArrayList<Product> products;
+    private Map<String, List<Product>> products;
 
     public ProductBasket(List<Product> products) {
-        this.products = new ArrayList<>();
-        this.products.addAll(products);
+        this.products = new HashMap<>();
+
+        for (Product p : products) {
+            List<Product> valList = new ArrayList<Product>();
+            valList.add(p);
+            this.products.put(p.getName(), valList);
+        }
     }
 
     public void addProduct(Product product) {
-        products.add(product);
+        List<Product> currVal = products.putIfAbsent(product.getName(), List.of(product));
+
+        currVal.add(product);
+
+        if (!(currVal == null)) {
+            products.put(product.getName(), currVal);
+        }
     }
 
     public int getTotalCost() {
         int result = 0;
 
-        for (Product p : products) {
-            result += p.getCost();
-        }
+        for (List<Product> currVal : products.values()) {
+            for (Product p : currVal) {
+                result += p.getCost();
+            }
 
+        }
         return result;
     }
 
@@ -32,11 +43,13 @@ public class ProductBasket {
         String result = "";
         int specialProductsCount = 0;
 
-        for (Product currentProduct : products) {
-            result = result + currentProduct.toString() + "\n";
+        for (List<Product> currVal : products.values()) {
+            for (Product currentProduct : currVal) {
+                result = result + currentProduct.toString() + "\n";
 
-            if (currentProduct.isSpecial()) {
-                specialProductsCount++;
+                if (currentProduct.isSpecial()) {
+                    specialProductsCount++;
+                }
             }
         }
 
@@ -56,8 +69,10 @@ public class ProductBasket {
     public String printBasket() {
         String result = "";
 
-        for (Product currentProduct : products) {
-            result = result + currentProduct.toString() + "\n";
+        for (List<Product> currVal : products.values()) {
+            for (Product currentProduct : currVal) {
+                result = result + currentProduct.toString() + "\n";
+            }
         }
 
         if (result.isBlank()) {
@@ -68,10 +83,12 @@ public class ProductBasket {
     }
 
     public boolean isProductInBasket(String productName) {
-        for (Product p : products) {
-            if (p.getName().toUpperCase()
-                    .equals(productName.toUpperCase())) {
-                return true;
+        for (List<Product> currVal : products.values()) {
+            for (Product p : currVal) {
+                if (p.getName().toUpperCase()
+                        .equals(productName.toUpperCase())) {
+                    return true;
+                }
             }
         }
 
@@ -84,21 +101,18 @@ public class ProductBasket {
 
     public List<Product> removeProductByName(String name) {
         List<Product> result = new ArrayList<>();
-        Iterator it = products.iterator();
-        Product currentProduct;
 
-        if (isProductInBasket(name)) {
-            while (it.hasNext()) {
-                currentProduct = (Product) it.next();
+        for (String key : products.keySet()) {
+            if (key.equalsIgnoreCase(name)) {
+                List<Product> removed = products.remove(key);
 
-                if (currentProduct.getName().toUpperCase()
-                        .equals(name.toUpperCase())) {
-                    result.add(currentProduct);
-                    it.remove();
+                for (Product p : removed) {
+                    result.add(p);
                 }
+
+                break;
             }
         }
-
         return result;
     }
 }

@@ -29,7 +29,7 @@ public class App {
         List<Searchable> toEngine = List.of(p1, p2, p3, p4, p5, a1, a2);
         SearchEngine searchEngine = new SearchEngine(toEngine, toEngine.size());
 
-        System.out.println(searchEngine.search("два"));
+        System.out.println(searchEngine.search("ый"));
         System.out.println(searchEngine.search("микров"));
 
         try {
