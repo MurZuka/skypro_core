@@ -18,7 +18,8 @@ public class ProductBasket {
     }
 
     public void addProduct(Product product) {
-        ArrayList<Product> currVal = (ArrayList<Product>) products.putIfAbsent(product.getName(), List.of(product));
+        List<Product> currVal = products.putIfAbsent(product.getName(), List.of(product));
+
         currVal.add(product);
 
         if (!(currVal == null)) {
