@@ -10,7 +10,9 @@ import org.skypro.skyshop.search.BestResultNotFound;
 import org.skypro.skyshop.search.SearchEngine;
 import org.skypro.skyshop.search.Searchable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws BestResultNotFound {
@@ -19,15 +21,16 @@ public class App {
         SimpleProduct p3 = new SimpleProduct("Холодильник", 720);
         FixPriceProduct p4 = new FixPriceProduct("Фиксированный чайник");
         DiscountedProduct p5 = new DiscountedProduct("Скидочный тостер", 100, (byte) 5);
+        DiscountedProduct p6 = new DiscountedProduct("Телевизор", 99, (byte) 5);
 
         Article a1 = new Article("Статья 1", "Текст статьи раз");
         Article a2 = new Article("Описание 2", "Текст описания два");
 
-        Searchable[] toEngine = new Searchable[]{p1, p2, p3, p4, p5, a1, a2};
-        SearchEngine searchEngine = new SearchEngine(toEngine, toEngine.length);
+        List<Searchable> toEngine = List.of(p1, p2, p3, p4, p5, a1, a2);
+        SearchEngine searchEngine = new SearchEngine(toEngine, toEngine.size());
 
-        System.out.println(Arrays.toString(searchEngine.search("два")));
-        System.out.println(Arrays.toString(searchEngine.search("микров")));
+        System.out.println(searchEngine.search("два"));
+        System.out.println(searchEngine.search("микров"));
 
         try {
             Product incorrectNameProduct = new SimpleProduct("", 0);
@@ -37,5 +40,17 @@ public class App {
         }
 
         System.out.println(searchEngine.getBestResult("ый"));
+
+        ProductBasket basket = new ProductBasket(List.of(p1, p2, p3, p4, p5, p6));
+
+        List<Product> checkRemoved = basket.removeProductByName("телевизор");
+
+        if (checkRemoved.isEmpty()) {
+            System.out.println("Список пуст");
+        } else {
+            System.out.println(checkRemoved);
+        }
+
+        System.out.println(basket.printBasket());
     }
 }

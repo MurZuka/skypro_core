@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cf782d4-89d1-4e38-a308-a4ffd72c2ec5" name="Changes" comment="Доработан конструктор в классе SearchEngine: учитывается передаваемый параметр arrSize (переименован во избежание путаницы).&#10;&#10;Исправлен метод search() там же: задан размер выдачи в 5 элементов, контролируется заполняемость массива.">
-      <change afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/search/BestResultNotFound.java" afterDir="false" />
+    <list default="true" id="5cf782d4-89d1-4e38-a308-a4ffd72c2ec5" name="Changes" comment="Вынес в отдельный метод подсчёт совпадений при поиске">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/DiscountedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/DiscountedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/basket/ProductBasket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/basket/ProductBasket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/FixPriceProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/FixPriceProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/product/SimpleProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/product/SimpleProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java" afterDir="false" />
     </list>
@@ -26,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="homework4" />
+        <entry key="$PROJECT_DIR$" value="homework5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,7 +93,10 @@
       <workItem from="1755793573910" duration="1122000" />
       <workItem from="1755974183384" duration="596000" />
       <workItem from="1756125843661" duration="4028000" />
-      <workItem from="1756709670378" duration="6492000" />
+      <workItem from="1756709670378" duration="8113000" />
+      <workItem from="1756735869661" duration="598000" />
+      <workItem from="1756797767322" duration="1878000" />
+      <workItem from="1756899083158" duration="6926000" />
     </task>
     <task id="LOCAL-00001" summary="Начальный коммит">
       <created>1752609014994</created>
@@ -145,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1756128038266</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Домашнее задание по уроку «Исключения в Java»">
+      <created>1756718024237</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756718024237</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Вынес в отдельный метод подсчёт совпадений при поиске">
+      <created>1756798341928</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756798341928</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +178,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="homework2" />
+                        <option value="homework6_collections_list" />
                       </list>
                     </value>
                   </entry>
@@ -180,20 +196,37 @@
     <MESSAGE value="Домашнее задание по уроку «ООП. Наследование. Абстрактные классы»" />
     <MESSAGE value="Домашнее задание по уроку «ООП. Полиморфизм. Интерфейсы»" />
     <MESSAGE value="Доработан конструктор в классе SearchEngine: учитывается передаваемый параметр arrSize (переименован во избежание путаницы).&#10;&#10;Исправлен метод search() там же: задан размер выдачи в 5 элементов, контролируется заполняемость массива." />
-    <option name="LAST_COMMIT_MESSAGE" value="Доработан конструктор в классе SearchEngine: учитывается передаваемый параметр arrSize (переименован во избежание путаницы).&#10;&#10;Исправлен метод search() там же: задан размер выдачи в 5 элементов, контролируется заполняемость массива." />
+    <MESSAGE value="Домашнее задание по уроку «Исключения в Java»" />
+    <MESSAGE value="Вынес в отдельный метод подсчёт совпадений при поиске" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вынес в отдельный метод подсчёт совпадений при поиске" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java</url>
-          <line>45</line>
+          <line>44</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/search/SearchEngine.java</url>
-          <line>63</line>
+          <line>54</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/App.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/basket/ProductBasket.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/skypro/skyshop/basket/ProductBasket.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
