@@ -1,5 +1,7 @@
 package org.skypro.skyshop.search;
 
+import org.skypro.skyshop.article.Article;
+
 public interface Searchable {
     String getSearchTerm();
 
