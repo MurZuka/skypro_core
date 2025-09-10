@@ -3,17 +3,18 @@ package org.skypro.skyshop.basket;
 import org.skypro.skyshop.product.Product;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ProductBasket {
-    private HashMap<String, List<Product>> products;
+    private Map<String, List<Product>> products;
 
     public ProductBasket(List<Product> products) {
         this.products = new HashMap<>();
 
         for (Product p : products) {
-            List<Product> valList = new ArrayList<Product>();
-            valList.add(p);
-            this.products.put(p.getName(), valList);
+            this.products.put(p.getName(), new ArrayList<>() {{
+                add(p);
+            }});
         }
     }
 
@@ -27,52 +28,44 @@ public class ProductBasket {
     }
 
     public int getTotalCost() {
-        int result = 0;
-
-        for (List<Product> currVal : products.values()) {
-            for (Product p : currVal) {
-                result += p.getCost();
-            }
-
-        }
-        return result;
+        return products.values().stream().flatMap(Collection::stream)
+                .mapToInt(Product::getCost)
+                .sum();
     }
 
     public String toString() {
-        String result = "";
-        int specialProductsCount = 0;
-
-        for (List<Product> currVal : products.values()) {
-            for (Product currentProduct : currVal) {
-                result = result + currentProduct.toString() + "\n";
-
-                if (currentProduct.isSpecial()) {
-                    specialProductsCount++;
-                }
-            }
-        }
+        String result = products.values().stream().flatMap(Collection::stream)
+                .map(Product::toString)
+                .collect(Collectors.joining("\n"));
 
         if (result.isBlank()) {
             result = "в корзине пусто";
         } else {
-            result = result + "Итого: " + getTotalCost();
+            result = result + "\nИтого: " + getTotalCost();
+
+            long specialProductsCount = getSpecialCount();
 
             if (specialProductsCount > 0) {
-                result += "\n" + "Специальных товаров: " + specialProductsCount;
+                result += "\nСпециальных товаров: " + specialProductsCount;
             }
         }
 
         return result;
     }
 
-    public String printBasket() {
-        String result = "";
+    private long getSpecialCount() {
+        return products.values().stream().flatMap(Collection::stream)
+                .filter(Product::isSpecial)
+                .count();
+    }
 
-        for (List<Product> currVal : products.values()) {
-            for (Product currentProduct : currVal) {
-                result = result + currentProduct.toString() + "\n";
-            }
-        }
+    public String printBasket() {
+        StringBuilder sb = new StringBuilder();
+
+        products.values().stream().flatMap(Collection::stream)
+                .forEach(p -> sb.append(p.toString()).append("\n"));
+
+        String result = sb.toString();
 
         if (result.isBlank()) {
             return "В корзине пусто";
@@ -82,16 +75,8 @@ public class ProductBasket {
     }
 
     public boolean isProductInBasket(String productName) {
-        for (List<Product> currVal : products.values()) {
-            for (Product p : currVal) {
-                if (p.getName().toUpperCase()
-                        .equals(productName.toUpperCase())) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
+        return products.values().stream().flatMap(Collection::stream)
+                .anyMatch(p -> p.getName().toUpperCase().equals(productName.toUpperCase()));
     }
 
     public void purgeBasket() {

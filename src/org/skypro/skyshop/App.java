@@ -52,5 +52,6 @@ public class App {
         }
 
         System.out.println(basket.printBasket());
+        System.out.println(basket.isProductInBasket("холодильник"));
     }
 }
