@@ -3,10 +3,10 @@ package org.skypro.skyshop.search;
 import java.util.*;
 
 public class SearchEngine {
-    private ArrayList<Searchable> elements;
+    private Set<Searchable> elements;
 
     public SearchEngine(List<Searchable> elements, int listSize) {
-        this.elements = new ArrayList<>();
+        this.elements = new HashSet<>();
 
         if (elements.size() == listSize) {
             this.elements.addAll(elements);
@@ -23,12 +23,12 @@ public class SearchEngine {
         }
     }
 
-    public Map<String, Searchable> search(String toSearch) {
-        Map<String, Searchable> result = new TreeMap<>();
+    public Set<Searchable> search(String toSearch) {
+        Set<Searchable> result = new TreeSet<>(new SearchableComparator());
 
         for (Searchable s : elements) {
             if (s.getSearchTerm().toUpperCase().contains(toSearch.toUpperCase())) {
-                result.put(s.getName(), s);
+                result.add(s);
             }
         }
 
